@@ -1,16 +1,15 @@
-# Typescript
-Typescript documentation 
+# Typescript documentation 
 
 # Transpile
-"tsc example.ts" transpila o arquivo para js
-"tsc -w" transpila para js em tempo real
+"tsc example.ts" transpila o arquivo ts para js.
+"tsc -w" transpila para js em tempo real.
 
-# Tipos
+# Types
 Caso não especifique um tipo, TS seta um tipo automaticamente a uma variável de acordo com o valor dela.
-Só aceita valores do tipo designado.
+Só aceita valores do tipo referenciado.
 
 ## Referenciando tipos:
-### Tipo ": any" aceita qualquer tipo de valor ficando dinâmico
+### * Tipo ": any" aceita qualquer tipo de valor ficando dinâmico
 Ex: let minhaIdade || let minhaIdade: any = "15"
 
 ### Tipo ": number" aceita números
