@@ -74,3 +74,20 @@ function multiplicar(numA: number, numB: number): number {
     return numA * numB
 }
 ```
+
+### Referenciando uma variável que vai receber uma função
+Ex:
+```
+let calculo: (X: number, Y: number) => number
+calculo = multiplicar
+console.log(calculo(5, 6))
+```
+
+### Tipo objeto - não precisa estar em ordem
+Ex:
+```
+let usuario: { nome: string, idade: number} = {
+    nome: 'João',
+    idade: 27
+}
+```

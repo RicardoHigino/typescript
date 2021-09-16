@@ -1,26 +1,26 @@
-// string
+// ################### String 
 let nome = 'joão' //ts atribui um tipo automaticamente de acordo com o valor, caso n tenha colocado nenhum tipo
 console.log(nome)
 //nome = 1 // erro valor diferente
 
-// numbers
+// ################### Numbers 
 let idade: number = 27
 // idade = "Ana" // erro valor diferente
 console.log(idade)
 
-// boolean
+// ################### Boolean 
 let possuiHobbies: boolean = false
 // possuiHobbies = 1 // erro valor diferente
 console.log(possuiHobbies)
 
-// tipos explícitos
+// ################### Tipos explícitos 
 let minhaIdade // dessa maneira é inicializada com tipo "any" ficando dinâmico
 minhaIdade = 27
 console.log(typeof minhaIdade)
 minhaIdade = 'valor'
 console.log(typeof minhaIdade)
 
-// array
+// ################### Array 
 let hobbies: any[] = ["Cozinhar", "Praticar Esportes"]
 console.log(hobbies[0])
 console.log(typeof hobbies)
@@ -28,14 +28,14 @@ console.log(typeof hobbies)
 hobbies = [100, 'ola', 200, true]
 //hobbies = 100
 
-// tuplas - é um array com valores predefinidos que deve seguir uma ordem
+// ################### Tuplas - é um array com valores predefinidos que deve seguir uma ordem 
 let endereco: [string, number, string] = ["Av Principal", 99, "Bloco A"]
 console.log(endereco)
 
 endereco = ["Rua Importante", 100, "Bloco C"]
 console.log(endereco)
 
-// enums - é uma estrutura que você define valores pré definidos
+// ################### Enums - é uma estrutura que você define valores pré definidos 
 enum Cor {
     Cinza, // 0
     Verde = 100, // 100 pode setar um valor mas o próximo irá continuar este ex: 101
@@ -45,13 +45,13 @@ enum Cor {
 let minhaCor: Cor = Cor.Verde
 console.log(minhaCor)
 
-// any
+// ################### Any 
 let carro: any = 'BMW'
 console.log(carro)
 carro = { marca: 'BMW', ano: 2019 }
 console.log(carro)
 
-// funções
+// ################### Funções 
 function retornaMeuNome(): string {
     //return minhaIdade
     return nome
@@ -72,3 +72,26 @@ function multiplicar(numA: number, numB: number): number {
 
 // console.log(multiplicar(2, 'Bia'))
 console.log(multiplicar(2, 3))
+
+// ################### Tipo função 
+let calculo: (X: number, Y: number) => number
+// calculo = digaOi
+// calculo()
+// calculo = {}
+
+calculo = multiplicar
+console.log(calculo(5, 6))
+
+// Objetos
+let usuario: { nome: string, idade: number} = {
+    nome: 'João',
+    idade: 27
+}
+
+console.log(usuario)
+
+usuario = {
+    idade: 31,
+    nome: 'Maria',
+}
+console.log(usuario)
