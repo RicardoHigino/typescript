@@ -1,12 +1,12 @@
 # Typescript documentation 
 
 # Transpile
-"tsc example.ts" transpila o arquivo ts para js.
-"tsc -w" transpila para js em tempo real.
+* "tsc example.ts" transpila o arquivo ts para js.
+* "tsc -w" transpila para js em tempo real.
 
 # Types
-Caso não especifique um tipo, TS seta um tipo automaticamente a uma variável de acordo com o valor dela.
-Só aceita valores do tipo referenciado.
+* Caso não especifique um tipo, TS seta um tipo automaticamente a uma variável de acordo com o valor dela.
+* Só aceita valores do tipo referenciado.
 
 ## Referenciando tipos:
 ### Tipo ": any" aceita qualquer tipo de valor ficando dinâmico
