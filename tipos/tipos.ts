@@ -44,3 +44,31 @@ enum Cor {
 
 let minhaCor: Cor = Cor.Verde
 console.log(minhaCor)
+
+// any
+let carro: any = 'BMW'
+console.log(carro)
+carro = { marca: 'BMW', ano: 2019 }
+console.log(carro)
+
+// funções
+function retornaMeuNome(): string {
+    //return minhaIdade
+    return nome
+}
+
+console.log(retornaMeuNome())
+
+function digaOi(): void { // void é igual vazio, deixa explicito que esta função não retorna nada
+    console.log('Oi')
+    // return minhaIdade
+}
+
+digaOi()
+
+function multiplicar(numA: number, numB: number): number {
+    return numA * numB
+}
+
+// console.log(multiplicar(2, 'Bia'))
+console.log(multiplicar(2, 3))
