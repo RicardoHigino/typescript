@@ -30,8 +30,7 @@ Referencia um array e seu tipo
 ```
 let hobbies: any[] = ["Cozinhar", "Praticar Esportes"]
 ```
-#### Podemos referenciar funções ou parâmetros
-Ex:
+#### Podemos referenciar funções ou parâmetros.
 ```
 function digaOi(): void {
     console.log('Oi')
@@ -42,8 +41,7 @@ function multiplicar(numA: number, numB: number): number {
 }
 ```
 
-#### Referenciando uma variável que vai receber uma função
-Ex:
+#### Referenciando uma variável que vai receber uma função.
 ```
 let calculo: (X: number, Y: number) => number
 calculo = multiplicar
