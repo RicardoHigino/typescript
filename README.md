@@ -26,7 +26,7 @@ let minhaIdade: any = "15"
 ```
 
 ### Any[]
-Referencia um array e seu tipo
+Referencia um array e seu tipo.
 ```
 let hobbies: any[] = ["Cozinhar", "Praticar Esportes"]
 ```
@@ -90,7 +90,7 @@ type Funcionario = {
     baterPonto: (horas: number) => string
 }
 ```
-Depois é só instânciar o tipo.
+Depois é só instanciar o tipo.
 ```
 let funcionario: Funcionario = { 
     // "=" Atribuindo valor ao obejto
@@ -103,4 +103,56 @@ let funcionario: Funcionario = {
         }
     }
 }
+```
+
+### Union Types
+Múltiplos tipos.
+```
+let nota: number | string = 10 
+console.log(`Minha nota é ${nota}`)
+nota = '10'
+console.log(`Minha nota é ${nota}`)
+```
+
+### Never
+Quando queremos explicitar que a função vai terminar em algum erro ou vai ficar em algum tipo de looping e nunca vai retornar a função. Para quando a função não termina corretamente.
+```
+function falha(msg: string): never {
+    throw new Error(msg)
+}
+```
+
+### Null
+É mais útil para se ter um valor opcional
+```
+let alturaOpcional: null | number = 12
+alturaOpcional = null
+```
+Exemplo de um criação de contato:
+```
+type Contato = {
+    nome: string,
+    tel1: string,
+    tel2: string | null
+}
+
+const contato1: Contato = {
+    nome: 'Fulano',
+    tel1: '98765432',
+    tel2: null
+}
+```
+Quando instanciamos uma variável como tipo null não podemos alterar ela pois é nula. 
+```
+let podeSerNulo: null = null
+podeSerNulo = 50 
+console.log(podeSerNulo)
+```
+Se atribuirmos o null para a variável ela torna "any" podendo assim alterar seu valor posteriormente.
+```
+let podeSerNulo = null
+podeSerNulo = 12
+console.log(podeSerNulo)
+podeSerNulo = 'abc'
+console.log(podeSerNulo)
 ```

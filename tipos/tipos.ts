@@ -151,3 +151,80 @@ let funcionario: Funcionario = {
 console.log(funcionario.supervisores)
 console.log(funcionario.baterPonto(8))
 console.log(funcionario.baterPonto(9))
+
+// --------------------- Union Types --------------------- 
+// Múltiplos tipos
+let nota: number | string = 10 
+console.log(`Minha nota é ${nota}`)
+nota = '10'
+console.log(`Minha nota é ${nota}`)
+
+// Checando tipos - código feito quando não se usa o typescript por exemplo
+let valor = 30
+
+// esse código abaixo é um exemplo de verificações que o js precisa fazer sobre o type das variáveis
+if (typeof valor == "number") {
+    console.log("É um number!")
+} else {
+    console.log(typeof valor)
+}
+
+// O typescript já faz toda essa verificação automaticamente 
+let valor2: number
+//valor2 = 'ricardo' // ele já faz a verificação dando erro no "valor2"
+
+// --------------------- Never --------------------- 
+// Quando queremos explicitar que a função vai terminar em algum erro ou vai ficar em algum tipo 
+// de looping e nunca vai retornar a função. Para quando a função não termina corretamente.
+
+function falha(msg: string): never {
+    throw new Error(msg)
+}
+
+const produto = {
+    nome: 'Sabão',
+    preco: 80,
+    validarProduto() {
+        if(!this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome')
+        }
+        if(this.preco <= 0) {
+            falha('Preco inválido!')
+        }
+    }
+}
+
+produto.validarProduto()
+
+// --------------------- Null --------------------- 
+// Flag do typescript
+// É mais útil para ter um valor opcional
+
+let altura = 12
+// altura = null // para dar certo precisa ativar no tsconfig
+
+// podemos usar o union types
+let alturaOpcional: null | number = 12
+alturaOpcional = null
+
+type Contato = {
+    nome: string,
+    tel1: string,
+    tel2: string | null
+}
+
+const contato1: Contato = {
+    nome: 'Fulano',
+    tel1: '98765432',
+    tel2: null
+}
+
+console.log(contato1.nome)
+console.log(contato1.tel1)
+console.log(contato1.tel2)
+
+let podeSerNulo = null // fica como tipo "any" podendo assim alterar seu valor posteriormente
+podeSerNulo = 12
+console.log(podeSerNulo)
+podeSerNulo = 'abc'
+console.log(podeSerNulo)

@@ -117,3 +117,61 @@ var funcionario = {
 console.log(funcionario.supervisores);
 console.log(funcionario.baterPonto(8));
 console.log(funcionario.baterPonto(9));
+// --------------------- Union Types --------------------- 
+// Múltiplos tipos
+var nota = 10;
+console.log("Minha nota \u00E9 " + nota);
+nota = '10';
+console.log("Minha nota \u00E9 " + nota);
+// Checando tipos - código feito quando não se usa o typescript por exemplo
+var valor = 30;
+// esse código abaixo é um exemplo de verificações que o js precisa fazer sobre o type das variáveis
+if (typeof valor == "number") {
+    console.log("É um number!");
+}
+else {
+    console.log(typeof valor);
+}
+// O typescript já faz toda essa verificação automaticamente 
+var valor2;
+//valor2 = 'ricardo' // ele já faz a verificação dando erro no "valor2"
+// --------------------- Never --------------------- 
+// Quando queremos explicitar que a função vai terminar em algum erro ou vai ficar em algum tipo 
+// de looping e nunca vai retornar a função. Para quando a função não termina corretamente.
+function falha(msg) {
+    throw new Error(msg);
+}
+var produto = {
+    nome: 'Sabão',
+    preco: 80,
+    validarProduto: function () {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Preco inválido!');
+        }
+    }
+};
+produto.validarProduto();
+// --------------------- Null --------------------- 
+// Flag do typescript
+// É mais útil para ter um valor opcional
+var altura = 12;
+// altura = null // para dar certo precisa ativar no tsconfig
+// podemos usar o union types
+var alturaOpcional = 12;
+alturaOpcional = null;
+var contato1 = {
+    nome: 'Fulano',
+    tel1: '98765432',
+    tel2: null
+};
+console.log(contato1.nome);
+console.log(contato1.tel1);
+console.log(contato1.tel2);
+var podeSerNulo = null; // fica como tipo "any" podendo assim alterar seu valor posteriormente
+podeSerNulo = 12;
+console.log(podeSerNulo);
+podeSerNulo = 'abc';
+console.log(podeSerNulo);
