@@ -9,61 +9,74 @@
 * Só aceita valores do tipo referenciado.
 
 ## Referenciando tipos:
-### Any - aceita qualquer tipo de valor ficando dinâmico
-Ex: 
-```
-let minhaIdade || let minhaIdade: any = "15"
-```
-
-### Number - aceita números
-Ex: 
-```
-let idade: number = 27
-```
-
-### String - aceita strings
-Ex: 
+### String, Number e Boolean
+Tipos padrões.
 ```
 let nome: string = 'joão'
-```
-
-### Boolean - aceita booleanos
-Ex: 
-```
+let idade: number = 27
 let possuiHobbies: boolean = false
+
+```
+### Any
+Aceita qualquer tipo de valor se tornando dinâmico.
+```
+let minhaIdade 
+|| 
+let minhaIdade: any = "15"
 ```
 
-### Any[] - referencia um array e seu tipo
-Ex: 
+### Any[]
+Referencia um array e seu tipo
 ```
 let hobbies: any[] = ["Cozinhar", "Praticar Esportes"]
 ```
+#### Podemos referenciar funções ou parâmetros
+Ex:
+```
+function digaOi(): void {
+    console.log('Oi')
+}
 
-### Void - é igual vazio, deixa explicito que esta função não retorna nada
-Ex: 
+function multiplicar(numA: number, numB: number): number {
+    return numA * numB
+}
+```
+
+#### Referenciando uma variável que vai receber uma função
+Ex:
+```
+let calculo: (X: number, Y: number) => number
+calculo = multiplicar
+console.log(calculo(5, 6))
+```
+
+### Void
+É igual vazio, deixa explicito que esta função não retorna nada.
 ```
 function digaOi(): void {
     console.log('Oi')
 }
 ```
 
-### Tupla - é um array com valores predefinidos que deve seguir uma ordem ficando bem ordenado.
-Ex: 
+### Tupla
+É um array com valores predefinidos que deve seguir uma ordem ficando bem ordenado.
 ```
 let endereco: [string, number, string] = ["Av Principal", 99, "Bloco A"]
 ```
 
-### Enum - é uma estrutura que você define valores pré definidos
-Ex: 
+### Enum
+É uma estrutura que você define valores pré definidos.
 ```
 enum Cor {
     Cinza, //1
     Verde, //2
     Azul //3
 }
+
+let minhaCor: Cor = Cor.Verde
 ```
-### Objeto - não precisa estar em ordem
-Ex:
+### Objeto
+Não precisa estar em ordem.
 ```
 let usuario: { nome: string, idade: number} = {
     nome: 'João',
@@ -71,15 +84,15 @@ let usuario: { nome: string, idade: number} = {
 }
 ```
 
-### Alias - tipos personalizados
-Ex:
+### Alias
+Tipos personalizados.
 ```
 type Funcionario = {
     supervisores: string[],
     baterPonto: (horas: number) => string
 }
 ```
-Depois é só instância o tipo
+Depois é só instânciar o tipo.
 ```
 let funcionario: Funcionario = { 
     // "=" Atribuindo valor ao obejto
@@ -92,24 +105,4 @@ let funcionario: Funcionario = {
         }
     }
 }
-```
-
-### Podemos referenciar funções ou parâmetros
-Ex:
-```
-function digaOi(): void {
-    console.log('Oi')
-}
-
-function multiplicar(numA: number, numB: number): number {
-    return numA * numB
-}
-```
-
-### Referenciando uma variável que vai receber uma função
-Ex:
-```
-let calculo: (X: number, Y: number) => number
-calculo = multiplicar
-console.log(calculo(5, 6))
 ```
