@@ -1,7 +1,17 @@
 # Typescript documentation 
-| [Transpilar](#types) | [Tipos](#types) |
+| [Tipos](#types) | [Transpilar](#transpile)|
 |-----------------|-----------------|
-|                 |                 |
+| [String, Number e Boolean](#string-number-e-boolean) |  |
+| [Any](#any)  |  |
+| [Array](#any-1)  |  |
+| [Void](#void)  |  |
+| [Tupla](#tupla)  |  |
+| [Enum](#enum)  |  |
+| [Objeto](#objeto)  |  |
+| [Alias](#alias)  |  |
+| [Union Types](#union-types)  |  |
+| [Never](#never)  |  |
+| [Null](#null)  |  |
 
 
 # Transpile
