@@ -1,4 +1,8 @@
 # Typescript documentation 
+| [Tipos](#tipos) ||
+|||
+|||
+
 
 # Transpile
 * "tsc example.ts" transpila o arquivo ts para js.
