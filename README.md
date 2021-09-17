@@ -1,7 +1,7 @@
 # Typescript documentation 
-| [Tipos](#tipos) ||
-|||
-|||
+| [Transpilar](#types) | [Tipos](#types) |
+|-----------------|-----------------|
+|                 |                 |
 
 
 # Transpile
