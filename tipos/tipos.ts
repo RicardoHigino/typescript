@@ -228,3 +228,78 @@ podeSerNulo = 12
 console.log(podeSerNulo)
 podeSerNulo = 'abc'
 console.log(podeSerNulo)
+
+// --------------------- Desafio - Transformar código JS em TS --------------------- 
+/*
+let contaBancaria = {
+    saldo: 3456,
+    depositar(valor) {
+        this.saldo += valor
+    }
+}
+ 
+let correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '98765432']
+}
+ 
+correntista.contaBancaria.depositar(3000)
+console.log(correntista)
+*/
+
+// minha solução
+
+// let contaBancaria:{
+//     saldo: number, 
+//     depositar: (valor: number) => void
+// } = {
+//     saldo: 3456,
+//     depositar(valor: number): void {
+//         this.saldo += valor
+//     }
+// }
+ 
+// let correntista: {
+//     nome: string,
+//     contaBancaria: {
+//         saldo: number,
+//         depositar: (valor: number) => void
+//     },
+//     contatos: string[]
+// } = {
+//     nome: 'Ana Silva',
+//     contaBancaria: contaBancaria,
+//     contatos: ['34567890', '98765432']
+// }
+ 
+// correntista.contaBancaria.depositar(3000)
+// console.log(correntista)
+
+// solução melhorada usando Alias
+type ContaBancaria = {
+    saldo: number, 
+    depositar: (valor: number) => void
+}
+
+let contaBancaria: ContaBancaria = {
+    saldo: 3456,
+    depositar(valor: number): void {
+        this.saldo += valor
+    }
+}
+ 
+type Correntista = {
+    nome: string,
+    contaBancaria: ContaBancaria,
+    contatos: string[]
+}
+
+let correntista: Correntista = {
+    nome: 'Ana Silva',
+    contaBancaria: contaBancaria,
+    contatos: ['34567890', '98765432']
+}
+ 
+correntista.contaBancaria.depositar(3000)
+console.log(correntista)
