@@ -9,37 +9,37 @@
 * Só aceita valores do tipo referenciado.
 
 ## Referenciando tipos:
-### Tipo ": any" aceita qualquer tipo de valor ficando dinâmico
+### Any - aceita qualquer tipo de valor ficando dinâmico
 Ex: 
 ```
 let minhaIdade || let minhaIdade: any = "15"
 ```
 
-### Tipo ": number" aceita números
+### Number - aceita números
 Ex: 
 ```
 let idade: number = 27
 ```
 
-### Tipo ": string" aceita strings
+### String - aceita strings
 Ex: 
 ```
 let nome: string = 'joão'
 ```
 
-### Tipo ": boolean" aceita booleanos
+### Boolean - aceita booleanos
 Ex: 
 ```
 let possuiHobbies: boolean = false
 ```
 
-### Tipo ": any[]" referencia um array e seu tipo
+### Any[] - referencia um array e seu tipo
 Ex: 
 ```
 let hobbies: any[] = ["Cozinhar", "Praticar Esportes"]
 ```
 
-### Tipo ": void" - void é igual vazio, deixa explicito que esta função não retorna nada
+### Void - é igual vazio, deixa explicito que esta função não retorna nada
 Ex: 
 ```
 function digaOi(): void {
@@ -47,19 +47,50 @@ function digaOi(): void {
 }
 ```
 
-### Tipo tupla - tupla é um array com valores predefinidos que deve seguir uma ordem ficando bem ordenado.
+### Tupla - é um array com valores predefinidos que deve seguir uma ordem ficando bem ordenado.
 Ex: 
 ```
 let endereco: [string, number, string] = ["Av Principal", 99, "Bloco A"]
 ```
 
-### Tipo enum - enums é uma estrutura que você define valores pré definidos
+### Enum - é uma estrutura que você define valores pré definidos
 Ex: 
 ```
 enum Cor {
     Cinza, //1
     Verde, //2
     Azul //3
+}
+```
+### Objeto - não precisa estar em ordem
+Ex:
+```
+let usuario: { nome: string, idade: number} = {
+    nome: 'João',
+    idade: 27
+}
+```
+
+### Alias - tipos personalizados
+Ex:
+```
+type Funcionario = {
+    supervisores: string[],
+    baterPonto: (horas: number) => string
+}
+```
+Depois é só instância o tipo
+```
+let funcionario: Funcionario = { 
+    // "=" Atribuindo valor ao obejto
+    supervisores: ['Ricardo', 'Guilherme'],
+    baterPonto(horario: number): string {
+        if(horario <= 8) {
+            return 'Ponto normal'
+        } else {
+            return 'Fora do trabalho!'
+        }
+    }
 }
 ```
 
@@ -81,13 +112,4 @@ Ex:
 let calculo: (X: number, Y: number) => number
 calculo = multiplicar
 console.log(calculo(5, 6))
-```
-
-### Tipo objeto - não precisa estar em ordem
-Ex:
-```
-let usuario: { nome: string, idade: number} = {
-    nome: 'João',
-    idade: 27
-}
 ```
