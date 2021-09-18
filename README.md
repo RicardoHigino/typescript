@@ -170,3 +170,10 @@ console.log(podeSerNulo)
 podeSerNulo = 'abc'
 console.log(podeSerNulo)
 ```
+# Flags úteis
+"noEmitOnError" - Bloqueia a compilação do ts para js quando tem algum erro.
+"sourceMap" - Mapeia o arquivo js gerando um ts no source do browser.
+"noImplicitAny" - Bloqueia a variável implícita any.
+"strictNullChecks" - Análise para saber se pode ser gerado um nulo indesejado.
+"noUnusedParameters" - Avisa quando um parâmetro não está sendo usado.
+"noUnusedLocals" - Avisa quando uma variável local não está sendo usada.
