@@ -17,7 +17,7 @@ console.log(inscritos)
 
 // "noImplicitAny"
 
-function soma(a, b) {
+function soma(a: any, b: any) {
     return a + b
 }
 
@@ -26,10 +26,10 @@ qualquerCoisa = 12
 qualquerCoisa = 'abc'
 
 // "strictNullChecks"
-function saudar(isManha: boolean): string {
-    let saudacao: string
+function saudar(isManha: boolean): void {
     if(isManha) {
-        saudacao = 'Bom Dia!'
+        console.log('Bom dia!')
+    } else {
+        console.log('Boa noite!')
     }
-    return saudacao
 }
